@@ -14,8 +14,17 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var studentNameEntered: UITextField!
     @IBOutlet weak var modulePicker: UIPickerView!
     
+    //MARK: Data
+    struct Evaluation {
+        let studentName: String
+        let module: Module
+    }
+    
+    
     //MARK: IBActions
     @IBAction func beginButtonTapped(_ sender: Any) {
+        guard let studentName = getStudentNameEntered(from: studentNameEntered) else {return}
+        let evaluation = Evaluation(studentName: studentName, module: modulePicker.)
     }
     
     override func viewDidLoad() {
