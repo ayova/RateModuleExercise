@@ -117,7 +117,20 @@ extension RateModuleViewController {
         }
         
         if let question = question {
-            cell.configure(with: question)
+            let questionNumberInSection: String
+            switch indexPath.section {
+            case 0:
+                questionNumberInSection = String("\(indexPath.row + 1)/\(state.designQuestions!.count)")
+            case 1:
+                questionNumberInSection = String("\(indexPath.row + 1)/\(state.requirementsQuestions.count)")
+            case 2:
+                questionNumberInSection = String("\(indexPath.row + 1)/\(state.codeStructureQuestions.count)")
+            case 3:
+                questionNumberInSection = String("\(indexPath.row + 1)/\(state.cleanCodeQuestions.count)")
+            default:
+                fatalError("Section doesn't exist")
+            }
+            cell.configure(with: question, at: questionNumberInSection)
         }
         
         return cell
@@ -126,16 +139,16 @@ extension RateModuleViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "RateModuleSectionHeader")!
         switch section {
-            case 0:
-                header.textLabel?.text = state.hasDesignSection ? "Diseño (\(String(state.designQuestions!.count)))" : "Requisitos (\(String(state.requirementsQuestions.count)))"
-            case 1:
-                header.textLabel?.text = state.hasDesignSection ? "Requisitos (\(String(state.requirementsQuestions.count)))" : "Estructura de código (\(String(state.codeStructureQuestions.count)))"
-            case 2:
-                header.textLabel?.text = state.hasDesignSection ? "Estructura de código (\(String(state.codeStructureQuestions.count)))": "Código limpio (\(String(state.cleanCodeQuestions.count)))"
-            case 3:
-                header.textLabel?.text = state.hasDesignSection ? "Código limpio (\(String(state.cleanCodeQuestions.count)))" : ""
-            default:
-                fatalError("Unexpected section")
+        case 0:
+            header.textLabel?.text = state.hasDesignSection ? "Diseño (\(String(state.designQuestions!.count)))" : "Requisitos (\(String(state.requirementsQuestions.count)))"
+        case 1:
+            header.textLabel?.text = state.hasDesignSection ? "Requisitos (\(String(state.requirementsQuestions.count)))" : "Estructura de código (\(String(state.codeStructureQuestions.count)))"
+        case 2:
+            header.textLabel?.text = state.hasDesignSection ? "Estructura de código (\(String(state.codeStructureQuestions.count)))": "Código limpio (\(String(state.cleanCodeQuestions.count)))"
+        case 3:
+            header.textLabel?.text = state.hasDesignSection ? "Código limpio (\(String(state.cleanCodeQuestions.count)))" : ""
+        default:
+            fatalError("Unexpected section")
         }
         return header
     }

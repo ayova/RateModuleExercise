@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7F2-t0-enr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7F2-t0-enr">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,43 +40,80 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="159"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="¿Compila el proyecto sin errores?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCq-vg-NQ2">
-                                            <rect key="frame" x="16" y="11" width="286" height="60"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbK-xV-Guu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TsQ-11-pOS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="159"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNR-vT-7Qx">
+                                                            <rect key="frame" x="11" y="8" width="42" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="KNR-vT-7Qx" firstAttribute="centerX" secondItem="TsQ-11-pOS" secondAttribute="centerX" id="8KL-BT-tFs"/>
+                                                        <constraint firstItem="KNR-vT-7Qx" firstAttribute="top" secondItem="TsQ-11-pOS" secondAttribute="top" constant="8" id="hkJ-mP-2It"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxK-1r-IKX">
+                                                    <rect key="frame" x="64" y="0.0" width="311" height="159"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="¿Compila el proyecto sin errores?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCq-vg-NQ2">
+                                                            <rect key="frame" x="8" y="8" width="196" height="53.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Existe un proyecto de Xcode que puede compilarse sin errores (sin triángulos rojos tras el proceso de &quot;Build&quot;)." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1H-C6-krH">
+                                                            <rect key="frame" x="8" y="69.5" width="295" height="81.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GxR-zt-Za9">
+                                                            <rect key="frame" x="254" y="8" width="51" height="31"/>
+                                                            <connections>
+                                                                <action selector="didToggleSwitch:" destination="9ny-np-Kam" eventType="valueChanged" id="Gd6-Rz-omc"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="GxR-zt-Za9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cCq-vg-NQ2" secondAttribute="trailing" constant="8" id="7VS-0c-v6s"/>
+                                                        <constraint firstItem="i1H-C6-krH" firstAttribute="leading" secondItem="sxK-1r-IKX" secondAttribute="leading" constant="8" id="84B-YQ-1v3"/>
+                                                        <constraint firstItem="i1H-C6-krH" firstAttribute="top" secondItem="cCq-vg-NQ2" secondAttribute="bottom" constant="8" id="Gww-yB-DkF"/>
+                                                        <constraint firstItem="cCq-vg-NQ2" firstAttribute="top" secondItem="sxK-1r-IKX" secondAttribute="top" constant="8" id="N5V-hS-sTg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="GxR-zt-Za9" secondAttribute="trailing" constant="8" id="NV7-xs-2mH"/>
+                                                        <constraint firstItem="GxR-zt-Za9" firstAttribute="top" secondItem="sxK-1r-IKX" secondAttribute="top" constant="8" id="Ps4-Ue-cOa"/>
+                                                        <constraint firstAttribute="bottom" secondItem="i1H-C6-krH" secondAttribute="bottom" constant="8" id="Yl0-tO-0Nn"/>
+                                                        <constraint firstItem="cCq-vg-NQ2" firstAttribute="leading" secondItem="sxK-1r-IKX" secondAttribute="leading" constant="8" id="gzk-Hg-uud"/>
+                                                        <constraint firstItem="i1H-C6-krH" firstAttribute="centerX" secondItem="sxK-1r-IKX" secondAttribute="centerX" id="raq-2d-qxj"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="286" id="Ngo-rA-Cs3"/>
+                                                <constraint firstAttribute="bottom" secondItem="sxK-1r-IKX" secondAttribute="bottom" id="BNz-8f-lMo"/>
+                                                <constraint firstItem="sxK-1r-IKX" firstAttribute="top" secondItem="gbK-xV-Guu" secondAttribute="top" id="OU6-Or-n1T"/>
+                                                <constraint firstItem="sxK-1r-IKX" firstAttribute="leading" secondItem="gbK-xV-Guu" secondAttribute="leading" constant="64" id="SeX-RS-0Mk"/>
+                                                <constraint firstAttribute="trailing" secondItem="sxK-1r-IKX" secondAttribute="trailing" id="vxL-U7-1N0"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Existe un proyecto de Xcode que puede compilarse sin errores (sin triángulos rojos tras el proceso de &quot;Build&quot;)." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1H-C6-krH">
-                                            <rect key="frame" x="16" y="79" width="343" height="61"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GxR-zt-Za9">
-                                            <rect key="frame" x="310" y="30" width="51" height="31"/>
-                                            <connections>
-                                                <action selector="didToggleSwitch:" destination="9ny-np-Kam" eventType="valueChanged" id="Gd6-Rz-omc"/>
-                                            </connections>
-                                        </switch>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="i1H-C6-krH" firstAttribute="top" secondItem="cCq-vg-NQ2" secondAttribute="bottom" constant="8" id="33z-Sf-yq8"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="i1H-C6-krH" secondAttribute="bottom" constant="8" id="5th-Kg-xAI"/>
-                                        <constraint firstItem="cCq-vg-NQ2" firstAttribute="top" secondItem="eIY-2B-ael" secondAttribute="topMargin" id="Mm2-cs-yPS"/>
-                                        <constraint firstItem="GxR-zt-Za9" firstAttribute="leading" secondItem="cCq-vg-NQ2" secondAttribute="trailing" constant="8" id="QSG-pk-x9f"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="GxR-zt-Za9" secondAttribute="trailing" id="QuH-1W-HLZ"/>
-                                        <constraint firstItem="i1H-C6-krH" firstAttribute="leading" secondItem="eIY-2B-ael" secondAttribute="leadingMargin" id="R2c-Kw-5hY"/>
-                                        <constraint firstItem="i1H-C6-krH" firstAttribute="trailing" secondItem="eIY-2B-ael" secondAttribute="trailingMargin" id="U4g-54-V7M"/>
-                                        <constraint firstItem="cCq-vg-NQ2" firstAttribute="leading" secondItem="eIY-2B-ael" secondAttribute="leadingMargin" id="Uaz-51-Egv"/>
-                                        <constraint firstItem="GxR-zt-Za9" firstAttribute="top" secondItem="cCq-vg-NQ2" secondAttribute="firstBaseline" id="pwR-R0-lJc"/>
+                                        <constraint firstAttribute="bottom" secondItem="gbK-xV-Guu" secondAttribute="bottom" id="dUD-AH-Qpk"/>
+                                        <constraint firstAttribute="trailing" secondItem="gbK-xV-Guu" secondAttribute="trailing" id="he1-7y-KBQ"/>
+                                        <constraint firstItem="gbK-xV-Guu" firstAttribute="leading" secondItem="eIY-2B-ael" secondAttribute="leading" id="hrC-bb-ylV"/>
+                                        <constraint firstItem="gbK-xV-Guu" firstAttribute="top" secondItem="eIY-2B-ael" secondAttribute="top" id="v02-pe-03I"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="i1H-C6-krH" id="zl3-zS-q7o"/>
                                     <outlet property="isPassedSwitch" destination="GxR-zt-Za9" id="ZYP-B3-l7i"/>
+                                    <outlet property="questionNumberLabel" destination="KNR-vT-7Qx" id="IbD-Rf-B6n"/>
                                     <outlet property="titleLabel" destination="cCq-vg-NQ2" id="1jL-eD-BAu"/>
                                 </connections>
                             </tableViewCell>
