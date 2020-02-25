@@ -46,8 +46,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TsQ-11-pOS">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="159"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNR-vT-7Qx">
-                                                            <rect key="frame" x="11" y="8" width="42" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNR-vT-7Qx">
+                                                            <rect key="frame" x="11.5" y="8" width="41" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -223,6 +223,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKF-4f-i9j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-708" y="-285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="g4b-B7-POY">
+            <objects>
+                <viewController id="A7Y-Y4-61t" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gNe-Km-1yB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estudiante evaluado:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXa-Mm-8Ml">
+                                <rect key="frame" x="16" y="8" width="159" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ov9-Lv-xag">
+                                <rect key="frame" x="16" y="45" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modulo a evaluar:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbU-Q3-wqX">
+                                <rect key="frame" x="16" y="95" width="135" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obl-Us-fxU">
+                                <rect key="frame" x="16" y="132" width="343" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="obl-Us-fxU" firstAttribute="top" secondItem="ZbU-Q3-wqX" secondAttribute="bottom" constant="16" id="6Nk-gN-57u"/>
+                            <constraint firstItem="ZbU-Q3-wqX" firstAttribute="top" secondItem="ov9-Lv-xag" secondAttribute="bottom" constant="16" id="6uu-xe-vHx"/>
+                            <constraint firstItem="obl-Us-fxU" firstAttribute="centerX" secondItem="gNe-Km-1yB" secondAttribute="centerX" id="Eua-Wo-iU0"/>
+                            <constraint firstItem="ov9-Lv-xag" firstAttribute="leading" secondItem="2mA-H4-CJA" secondAttribute="leading" constant="16" id="EyW-R3-IUy"/>
+                            <constraint firstItem="OXa-Mm-8Ml" firstAttribute="leading" secondItem="2mA-H4-CJA" secondAttribute="leading" constant="16" id="UNj-c2-4bo"/>
+                            <constraint firstItem="obl-Us-fxU" firstAttribute="leading" secondItem="2mA-H4-CJA" secondAttribute="leading" constant="16" id="X7B-It-hZa"/>
+                            <constraint firstItem="ov9-Lv-xag" firstAttribute="top" secondItem="OXa-Mm-8Ml" secondAttribute="bottom" constant="16" id="dTF-qm-41o"/>
+                            <constraint firstItem="ZbU-Q3-wqX" firstAttribute="leading" secondItem="2mA-H4-CJA" secondAttribute="leading" constant="16" id="fTd-zY-1PW"/>
+                            <constraint firstItem="OXa-Mm-8Ml" firstAttribute="top" secondItem="2mA-H4-CJA" secondAttribute="top" constant="8" id="qNR-gx-S3N"/>
+                            <constraint firstItem="ov9-Lv-xag" firstAttribute="centerX" secondItem="gNe-Km-1yB" secondAttribute="centerX" id="wSl-pe-bKE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2mA-H4-CJA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wqw-MF-zVf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-300" y="494"/>
         </scene>
     </scenes>
 </document>
