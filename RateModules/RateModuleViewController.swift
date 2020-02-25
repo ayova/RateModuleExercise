@@ -127,13 +127,13 @@ extension RateModuleViewController {
         let header = tableView.dequeueReusableCell(withIdentifier: "RateModuleSectionHeader")!
         switch section {
             case 0:
-                header.textLabel?.text = state.hasDesignSection ? "Diseño" : "Requisitos"
+                header.textLabel?.text = state.hasDesignSection ? "Diseño (\(String(state.designQuestions!.count)))" : "Requisitos (\(String(state.requirementsQuestions.count)))"
             case 1:
-                header.textLabel?.text = state.hasDesignSection ? "Requisitos" : "Estructura de código"
+                header.textLabel?.text = state.hasDesignSection ? "Requisitos (\(String(state.requirementsQuestions.count)))" : "Estructura de código (\(String(state.codeStructureQuestions.count)))"
             case 2:
-                header.textLabel?.text = state.hasDesignSection ? "Estructura de código": "Código limpio"
+                header.textLabel?.text = state.hasDesignSection ? "Estructura de código (\(String(state.codeStructureQuestions.count)))": "Código limpio (\(String(state.cleanCodeQuestions.count)))"
             case 3:
-                header.textLabel?.text = state.hasDesignSection ? "Código limpio" : ""
+                header.textLabel?.text = state.hasDesignSection ? "Código limpio (\(String(state.cleanCodeQuestions.count)))" : ""
             default:
                 fatalError("Unexpected section")
         }
