@@ -24,7 +24,7 @@ class LandingViewController: UIViewController {
     //MARK: IBActions
     @IBAction func beginButtonTapped(_ sender: Any) {
         guard let studentName = getStudentNameEntered(from: studentNameEntered) else {return}
-        let evaluation = Evaluation(studentName: studentName, module: modulePicker.)
+        
     }
     
     override func viewDidLoad() {

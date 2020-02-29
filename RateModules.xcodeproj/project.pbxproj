@@ -70,22 +70,54 @@
 		0BDF872A23DE04E500FD9083 /* RateModules */ = {
 			isa = PBXGroup;
 			children = (
-				0BDF872B23DE04E500FD9083 /* AppDelegate.swift */,
-				0BDF872D23DE04E500FD9083 /* SceneDelegate.swift */,
+				8422BDD8240A9AB500E71CBF /* Model */,
+				8422BDD7240A9AB100E71CBF /* View */,
+				8422BDD5240A9A9500E71CBF /* Controller */,
+				8422BDDB240A9BD800E71CBF /* Misc */,
+			);
+			path = RateModules;
+			sourceTree = "<group>";
+		};
+		8422BDD5240A9A9500E71CBF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				0BDF872F23DE04E500FD9083 /* RateModuleViewController.swift */,
-				0BDF873123DE04E500FD9083 /* Main.storyboard */,
-				0BDF873423DE04E700FD9083 /* Assets.xcassets */,
-				0BDF873623DE04E700FD9083 /* LaunchScreen.storyboard */,
-				0BDF873923DE04E700FD9083 /* Info.plist */,
-				0BEE035B23DE0A08007C9E35 /* QuestionTableViewCell.swift */,
-				0BF7809023DE0C3C007F8E8E /* Question.swift */,
-				0BF7809223DE15A8007F8E8E /* QuestionTableViewCellDelegate.swift */,
-				0BF7809423DE363A007F8E8E /* State.swift */,
-				0BF7809623DE3D4E007F8E8E /* RateCalculator.swift */,
 				0BF7809823DE3FD2007F8E8E /* RateResultsViewController.swift */,
 				84CAAD2D24059FDB00EC1CED /* LandingViewController.swift */,
 			);
-			path = RateModules;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8422BDD7240A9AB100E71CBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0BDF873123DE04E500FD9083 /* Main.storyboard */,
+				0BEE035B23DE0A08007C9E35 /* QuestionTableViewCell.swift */,
+				0BF7809223DE15A8007F8E8E /* QuestionTableViewCellDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8422BDD8240A9AB500E71CBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0BF7809023DE0C3C007F8E8E /* Question.swift */,
+				0BF7809423DE363A007F8E8E /* State.swift */,
+				0BF7809623DE3D4E007F8E8E /* RateCalculator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8422BDDB240A9BD800E71CBF /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				0BDF872B23DE04E500FD9083 /* AppDelegate.swift */,
+				0BDF872D23DE04E500FD9083 /* SceneDelegate.swift */,
+				0BDF873423DE04E700FD9083 /* Assets.xcassets */,
+				0BDF873623DE04E700FD9083 /* LaunchScreen.storyboard */,
+				0BDF873923DE04E700FD9083 /* Info.plist */,
+			);
+			name = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
