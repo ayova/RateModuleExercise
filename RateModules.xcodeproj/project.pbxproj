@@ -81,9 +81,9 @@
 		8422BDD5240A9A9500E71CBF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				84CAAD2D24059FDB00EC1CED /* LandingViewController.swift */,
 				0BDF872F23DE04E500FD9083 /* RateModuleViewController.swift */,
 				0BF7809823DE3FD2007F8E8E /* RateResultsViewController.swift */,
-				84CAAD2D24059FDB00EC1CED /* LandingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

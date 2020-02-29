@@ -11,10 +11,16 @@ import UIKit
 class RateModuleViewController: UITableViewController {
     
     var state = State(module: Module.module3B)
+    var studentName: String?
+    var modulePicked: Module?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = Module.module3B.rawValue
+        if let name =  studentName, let module = modulePicked?.rawValue {
+            navigationItem.title = "\(name) - \(module)"
+        } else {
+            navigationItem.title = "Module evaluation"
+        }
     }
     
     private func update(selectedQuestion: Question, with value: Bool) {

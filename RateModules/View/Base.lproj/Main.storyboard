@@ -242,6 +242,9 @@
                                 <rect key="frame" x="16" y="89" width="343" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="endedEnteringName:" destination="A7Y-Y4-61t" eventType="editingDidEnd" id="ZhF-kP-fof"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modulo a evaluar:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbU-Q3-wqX">
                                 <rect key="frame" x="16" y="139" width="135" height="21"/>
@@ -257,7 +260,7 @@
                                 <state key="normal" title="Empezar"/>
                                 <connections>
                                     <action selector="beginButtonTapped:" destination="A7Y-Y4-61t" eventType="touchUpInside" id="RwW-8W-lwe"/>
-                                    <segue destination="saZ-Bz-K9g" kind="show" id="gTb-L5-il7"/>
+                                    <segue destination="saZ-Bz-K9g" kind="show" identifier="ShowRateModule" id="gTb-L5-il7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -281,6 +284,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Evaluacion estudiante" id="ggN-kN-lXB"/>
                     <connections>
+                        <outlet property="beginButtonOutlet" destination="fTN-4y-r3u" id="eHW-vJ-09n"/>
                         <outlet property="modulePicker" destination="obl-Us-fxU" id="win-dV-P78"/>
                         <outlet property="studentNameEntered" destination="ov9-Lv-xag" id="l9M-8z-VyR"/>
                     </connections>
