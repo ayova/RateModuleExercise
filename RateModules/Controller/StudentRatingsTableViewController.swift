@@ -16,7 +16,7 @@ class StudentRatingsTableViewController: UITableViewController {
         super.viewDidLoad()
         //retrieve data from file
         studentsList = StudentsGrades.loadFromFile()
-        studentsList.sort(by: {$0.studentName < $1.studentName}) // reminder: sorting the list is key to avoid deletion errors
+        studentsList.sort(by: {$0.studentName < $1.studentName})
         //set edit button
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         self.navigationItem.leftBarButtonItem?.title = "Editar"
@@ -67,10 +67,18 @@ class StudentRatingsTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            removeStudent(at: indexPath.row)
-            studentsList.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)})
-
+            let alertController = UIAlertController(title: "Borrar", message: "Quieres borrar el registro?", preferredStyle: .alert)
+            
+            let deleteAction = UIAlertAction(title: "Borrar", style: .destructive, handler: {_ in
+                self.removeStudent(at: indexPath.row)
+                self.studentsList.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)})
+            
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+            
+            alertController.addAction(deleteAction)
+            alertController.addAction(cancelAction)
+            present(alertController, animated: true, completion: nil)
         } 
     }
   
