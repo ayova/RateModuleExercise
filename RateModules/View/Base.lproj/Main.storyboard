@@ -160,7 +160,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="notasEstudiante" id="dnB-sd-Tm5">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentGrades" id="dnB-sd-Tm5" customClass="StudentRatingTableViewCell" customModule="RateModules" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="122.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dnB-sd-Tm5" id="LKT-ak-s10">
@@ -254,6 +254,12 @@
                                         <constraint firstItem="wBa-Ho-TPZ" firstAttribute="top" secondItem="LKT-ak-s10" secondAttribute="top" constant="8" id="r49-It-qsx"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="didPassModule" destination="zWP-tE-A8L" id="3IE-Aj-cDn"/>
+                                    <outlet property="finalGrade" destination="vkS-zl-TwM" id="TvK-xL-ODr"/>
+                                    <outlet property="moduleGraded" destination="a3q-yW-GJY" id="J4x-lw-tDa"/>
+                                    <outlet property="studentName" destination="UQs-z3-kjP" id="LDP-nP-tHH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -10,15 +10,16 @@ import UIKit
 
 class StudentRatingTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var studentName: UILabel!
+    @IBOutlet weak var moduleGraded: UILabel!
+    @IBOutlet weak var didPassModule: UILabel!
+    @IBOutlet weak var finalGrade: UILabel!
+    
+    func configureStudentRatingCell(studentName: String, moduleGraded: String, didPass: String, finalGrade: String){
+        self.studentName.text = studentName
+        self.moduleGraded.text = moduleGraded
+        self.didPassModule.text = didPass
+        self.finalGrade.text = finalGrade
     }
 
 }

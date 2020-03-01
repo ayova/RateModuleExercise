@@ -10,10 +10,17 @@ import UIKit
 
 class StudentRatingsTableViewController: UITableViewController {
     
+    var studentsList = [StudentsGrades]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //retrieve data from file
+        studentsList = StudentsGrades.loadFromFile()
+        studentsList.sort(by: {$0.studentName < $1.studentName}) // reminder: sorting the list is key to avoid deletion errors
+        //set edit button
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         self.navigationItem.leftBarButtonItem?.title = "Editar"
+        //display data in cells
         tableView.reloadData()
     }
     
@@ -36,35 +43,42 @@ class StudentRatingsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return studentsList.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "studentGrades", for: indexPath) as! StudentRatingTableViewCell
+        let student = studentsList[indexPath.row]
+
+        cell.configureStudentRatingCell(studentName: student.studentName, moduleGraded: student.moduleGraded, didPass: student.didPass, finalGrade: student.finalGrade)
         
         return cell
     }
     
     
-    
+    /*
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    
+    */
     
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            removeStudent(at: indexPath.row)
+            studentsList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)})
+
         } 
     }
-    
+  
+    func removeStudent(at: Int) {
+        var list: [StudentsGrades] = StudentsGrades.loadFromFile()
+        list.remove(at: at)
+        StudentsGrades.saveToFile(grades: list)
+    }
     
     /*
      // Override to support rearranging the table view.
