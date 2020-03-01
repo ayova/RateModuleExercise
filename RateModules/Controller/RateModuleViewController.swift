@@ -51,6 +51,8 @@ class RateModuleViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowRateResults", let destination = segue.destination as? RateResultsViewController {
+            destination.studentName = studentName
+            destination.modulePicked = modulePicked
             destination.rateCalculator = RateCalculator(
                 numberOfDesignQuestions: state.hasDesignSection ? state.designQuestions!.count : 0,
                 numberOfRightlyAnsweredDesignQuestions: state.hasDesignSection ? state.designQuestions!.filter { $0.isPassed }.count : 0,

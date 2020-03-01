@@ -9,7 +9,7 @@
 import UIKit
 
 class LandingViewController: UIViewController {
-
+    
     //MARK: Variables
     var studentName: String?
     var modulePicked = Module.module2A
@@ -23,11 +23,11 @@ class LandingViewController: UIViewController {
     //MARK: IBActions
     @IBAction func beginButtonTapped(_ sender: Any) {
         guard let studentName = getStudentNameEntered(from: studentNameEntered)  else {return}
-//        print("Name: \(studentName), module: \(modulePicked)") // placeholder
-//        performSegue(withIdentifier: "ShowRateModule", sender: (studentName,modulePicked))
+        //        print("Name: \(studentName), module: \(modulePicked)") // placeholder
+        //        performSegue(withIdentifier: "ShowRateModule", sender: (studentName,modulePicked))
         
     }
-
+    
     @IBAction func endedEnteringName(_ sender: Any) {
         guard !studentNameEntered.text!.isEmpty else {
             beginButtonOutlet.isEnabled = false
@@ -59,7 +59,7 @@ class LandingViewController: UIViewController {
     }
     
     func getModulePicked(from pickerView: UIPickerView) -> Module? {
-//        guard let modulePicked = pickerView.
+        //        guard let modulePicked = pickerView.
         return modulePicked
     }
     
@@ -73,6 +73,9 @@ class LandingViewController: UIViewController {
         destination.modulePicked = getModulePicked(from: modulePicker)
     }
     
+    @IBAction func prepareForUnwindToMain(segue: UIStoryboardSegue) {
+        studentNameEntered.text = ""
+    }
 }
 
 //MARK: Picker delegate

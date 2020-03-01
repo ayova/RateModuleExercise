@@ -11,6 +11,8 @@ import UIKit
 class RateResultsViewController: UIViewController {
     
     var rateCalculator: RateCalculator?
+    var studentName: String?
+    var modulePicked: Module?
 
     @IBOutlet weak var resultEmojiLabel: UILabel!
     @IBOutlet weak var rateAsPercentLabel: UILabel!
@@ -18,9 +20,20 @@ class RateResultsViewController: UIViewController {
     @IBOutlet weak var requirementsRatioLabel: UILabel!
     @IBOutlet weak var codeStructureRatioLabel: UILabel!
     @IBOutlet weak var cleanCodeRatioLabel: UILabel!
+    @IBOutlet weak var studentNameLabel: UILabel!
+    @IBOutlet weak var modulePickedLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //hide back button
+        navigationItem.hidesBackButton = true
+        
+        //module and name
+        if let name = studentName, let module = modulePicked?.rawValue {
+            studentNameLabel.text = "Student: \(name)"
+            modulePickedLabel.text = "Module: \(module)"
+        }
         
         guard let rateCalculator = rateCalculator else { return }
         
