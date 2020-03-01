@@ -49,7 +49,7 @@ class StudentRatingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentGrades", for: indexPath) as! StudentRatingTableViewCell
         let student = studentsList[indexPath.row]
-
+        
         cell.configureStudentRatingCell(studentName: student.studentName, moduleGraded: student.moduleGraded, didPass: student.didPass, finalGrade: student.finalGrade)
         
         return cell
@@ -57,11 +57,11 @@ class StudentRatingsTableViewController: UITableViewController {
     
     
     /*
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
     
     
     // Override to support editing the table view.
@@ -81,7 +81,7 @@ class StudentRatingsTableViewController: UITableViewController {
             present(alertController, animated: true, completion: nil)
         } 
     }
-  
+    
     func removeStudent(at: Int) {
         var list: [StudentsGrades] = StudentsGrades.loadFromFile()
         list.remove(at: at)

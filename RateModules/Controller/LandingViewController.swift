@@ -22,10 +22,6 @@ class LandingViewController: UIViewController {
     
     //MARK: IBActions
     @IBAction func beginButtonTapped(_ sender: Any) {
-//        guard let studentName = getStudentNameEntered(from: studentNameEntered)  else {return}
-        //        print("Name: \(studentName), module: \(modulePicked)") // placeholder
-        //        performSegue(withIdentifier: "ShowRateModule", sender: (studentName,modulePicked))
-        
     }
     
     @IBAction func endedEnteringName(_ sender: Any) {
@@ -65,6 +61,11 @@ class LandingViewController: UIViewController {
     
     
     //MARK: Navigation
+    override func viewWillAppear(_ animated: Bool) {
+        beginButtonOutlet.isEnabled = false
+        beginButtonOutlet.alpha = 0.5
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "ShowRateModule", let destination = segue.destination as? RateModuleViewController else { return }
         
