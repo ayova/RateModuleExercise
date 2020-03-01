@@ -22,7 +22,7 @@ class LandingViewController: UIViewController {
     
     //MARK: IBActions
     @IBAction func beginButtonTapped(_ sender: Any) {
-        guard let studentName = getStudentNameEntered(from: studentNameEntered)  else {return}
+//        guard let studentName = getStudentNameEntered(from: studentNameEntered)  else {return}
         //        print("Name: \(studentName), module: \(modulePicked)") // placeholder
         //        performSegue(withIdentifier: "ShowRateModule", sender: (studentName,modulePicked))
         
