@@ -16,7 +16,7 @@ class StudentRatingsTableViewController: UITableViewController {
         super.viewDidLoad()
         //retrieve data from file
         studentsList = StudentsGrades.loadFromFile()
-        studentsList.sort(by: {$0.studentName < $1.studentName})
+        studentsList.sort(by: {$0.studentName.lowercased() < $1.studentName.lowercased()})
         //set edit button
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         self.navigationItem.leftBarButtonItem?.title = "Editar"
@@ -70,9 +70,11 @@ class StudentRatingsTableViewController: UITableViewController {
             let alertController = UIAlertController(title: "Borrar", message: "Quieres borrar el registro?", preferredStyle: .alert)
             
             let deleteAction = UIAlertAction(title: "Borrar", style: .destructive, handler: {_ in
-                self.removeStudent(at: indexPath.row)
+                self.removeStudent(position: indexPath.row)
                 self.studentsList.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)})
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            })
             
             let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
             
@@ -82,9 +84,10 @@ class StudentRatingsTableViewController: UITableViewController {
         } 
     }
     
-    func removeStudent(at: Int) {
+    func removeStudent(position: Int) {
         var list: [StudentsGrades] = StudentsGrades.loadFromFile()
-        list.remove(at: at)
+        list.sort(by: {$0.studentName.lowercased() < $1.studentName.lowercased()})
+        list.remove(at: position)
         StudentsGrades.saveToFile(grades: list)
     }
     

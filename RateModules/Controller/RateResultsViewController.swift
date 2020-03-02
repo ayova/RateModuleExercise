@@ -32,8 +32,8 @@ class RateResultsViewController: UIViewController {
         
         //module and name
         if let name = studentName, let module = modulePicked?.rawValue {
-            studentNameLabel.text = "Student: \(name)"
-            modulePickedLabel.text = "Module: \(module)"
+            studentNameLabel.text = "Estudiante: \(name)"
+            modulePickedLabel.text = "Módulo: \(module)"
             studentToPersist.studentName = name
             studentToPersist.moduleGraded = module
         }
@@ -71,6 +71,7 @@ class RateResultsViewController: UIViewController {
     func persistStudent(_ studentGrade: StudentsGrades) {
         var studentList: [StudentsGrades] = StudentsGrades.loadFromFile()
         studentList.append(studentGrade)
+        studentList.sort(by: {$0.studentName < $1.studentName})
         print(studentList)
         StudentsGrades.saveToFile(grades: studentList)
     }
